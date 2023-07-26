@@ -1,0 +1,20 @@
+Um caixa automático deve fazer várias funções, dentre elas, ele deve permitir que o usuário realize saques
+em dinheiro.
+Quando for solicitado que caixa automático realize um saque, ele deve entregar as cédulas que totalizem
+exatamente o valor solicitado, utilizando o mínimo de cédulas possível.
+O grupo deverá especificar o algoritmo que será responsável por:
+ -receber a informação do valor a ser sacado e
+ -vericar se o valor demandado pode ser atendido pelo caixa.
+ -Caso seja possível, o algoritmo deve calcular quantas cédulas de cada valor devem ser entregues, de tal
+forma que o total entregue seja exatamente o valor solicitado e que seja utilizada a menor quantidade
+de cédulas possível.
+ Caso não seja possível, o usuário deve ser informado que o caixa automático não é capaz de sacar
+aquele valor.
+As cédulas disponíveis no caixa automático são:
+ 2 reais;
+ 5 reais;
+ 10 reais;
+ 20 reais;
+ 50 reais;
+ 100 reais e
+ 200 reais.

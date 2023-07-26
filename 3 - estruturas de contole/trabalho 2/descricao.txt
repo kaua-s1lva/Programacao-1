@@ -1,0 +1,52 @@
+1. Validação de CPF
+O CPF é composto por 11 dígitos dispostos da seguinte forma:
+d1d2d3.d4d5d6.d7d8d9 − d10d11
+
+Para ser considerado válido, os dígitos d10 e d11 devem coincidir com o resutado das operações matemática
+realizadas nos demais dígitos conforme detalhado a seguir.
+1.1 Dígito d10
+O dígito d10 que será considerado como correto é o que for resultado das operações a seguir. Primeiramente
+deve-se calcular o valor de L a partir dos dígitos de 1 a 9 seguindo a fórmula a seguir:
+L = 10 × d1 + 9 × d2 + 8 × d3 + 7 × d4 + 6 × d5 + 5 × d6 + 4 × d7 + 3 × d8 + 2 × d9
+De posse de L, deve-se descobrir qual é o número inteiro r que satisfaz a equação a seguir, onde todos os
+valores são inteiros.
+
+L = 11 × k + r
+
+De posse de r, podemos descobrir qual o dígito d10 que será considerado como correto a partir da função
+a seguir.
+
+D10(r) = 
+
+0 se r = 0 ou r = 1
+11 − r caso contrário
+
+1.2 Dígito d11
+O dígito d11 que será considerado como correto é o que for resultado das operações a seguir. Primeiramente
+deve-se calcular o valor de L a partir dos dígitos de 2 a 10 seguindo a fórmula a seguir:
+M = 10 × d2 + 9 × d3 + 8 × d4 + 7 × d5 + 6 × d6 + 5 × d7 + 4 × d8 + 3 × d9 + 2 × D10
+De posse de L, deve-se descobrir qual é o número inteiro r que satisfaz a equação a seguir, onde todos os
+valores são inteiros.
+
+M = 11 × K + R
+
+De posse de R, podemos descobrir qual o dígito d11 que será considerado como correto a partir da função
+a seguir.
+
+D11(R) = 
+
+0, se R = 0 ou R = 1
+11 − R, caso contrário
+
+2. Programa
+O aluno deverá escrever um programa em C que peça ao usuário para digitar um CPF contendo apenas os
+11 dígitos numéricos.
+Ao receber o número do CPF, o programa calcular se o número informado satisfaz as regras de validação
+dos dígitos d10 e d11 detalhadas anteriormente.
+Após isto, o programa deve informar o usuário se o CPF digitado é válido ou não.
+
+3. Dicas
+Considerando o momento da disciplina, tomo a liberdade de passar algumas dicas para serem utilizadas na
+resolução deste trabalho.
+3.1. Utilizem uma variável do tipo long para receber o valor do CPF digitado pelo usuário;
+3.2. Para ler (scanf) ou escrever(printf) uma variável do tipo long, utilizem o sinal de escape %ld;
