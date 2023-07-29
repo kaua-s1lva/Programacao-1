@@ -1,0 +1,10 @@
+- Produto escalar de vetores
+O produto escalar (ou interno) entre dois vetores ~u = (u1; u2; u3) e ~v = (v1; v2; v3) é definido como:
+
+~u · ~v = u1v1 + u2v2 + u3v3
+
+- Programa
+O aluno deverá escrever um programa em C que peça ao usuário para digitar as coordenadas de dois vetores
+~u e ~v tendo cada um 3 coordenadas. Ao receber as coordenadas, o programa deve armazenar estes dados em
+dois vetores de reais. Após isto, o programa deve utilizar algum laço de repetição para calcular o produto
+escalar dos dois vetores. Ao final o programa deve imprimir o resultado do cálculo feito.

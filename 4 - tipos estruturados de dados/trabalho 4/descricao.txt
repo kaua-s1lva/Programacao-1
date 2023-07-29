@@ -1,0 +1,7 @@
+------Produto de matrizes-----
+
+O aluno deverá escrever um programa em C que peça ao usuário para digitar os 9 valores reais de uma
+matriz A3x3 e em seguida os 9 valores reais de uma matriz B3x3. Ao receber as coordenadas, o programa
+deve armazenar estes dados em duas matrizes de reais. Após receber todos os valores e armazená-los nas
+duas matrizes, o programa deve calcular o produto das duas matrizes, utilizando algum laço de repetição.
+Ao final o programa deve imprimir o resultado do cálculo feito.
