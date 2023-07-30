@@ -1,0 +1,125 @@
+-----Mensagem codificada--------
+Codificar uma mensagem consiste em embaralhar sua informação de tal forma que, pessoas que não tenham
+o conhecimento de como desembaralhar as informações não entendam a mensagem, porém as pessoas que
+tenham esse conhecimento consigam desembaralhar e entender a mensagem com pouco esforço.
+Formas mais recentes de codificar mensagem centralizam o conhecimento crucial para embaralhar e
+desembaralhar a mensagem numa sequencia de caracteres ou números conhecido como chave. Com isso o
+método de embaralhamento pode ser conhecido de todos, mas só quem conhece a chave a ser usada consegue
+corretamente embaralhar e desembaralhar a mensagem.
+
+1.0 Método de codificação
+O método a ser usado utiliza uma operação matemática simples aplicada entre cada letra da mensagem
+e da chave progressivamente. A operação matemática que será utilizada na codificação chama-se XOR
+e matematicamente é simbolizada por ⊕ e na linguagem C é executado utilizando o símbolo de acento
+circunflexo (^).
+Consideremos que a mensagem original será simbolizada por M, a chave será simbolizada por K e a
+mensagem codificada será simbolizada por C, sendo que:
+M = {m1, m2, m3, . . . , mn}
+C = {c1, c2, c3, . . . , cn}
+K = {k1, k2, k3, . . . , kq}
+
+1.1 Codificação
+Quando estamos de posse da mensagem M e da chave K e temos o interesse de gerar a mensagem codificada
+C, este processo é chamado de codificação. Este processo é feito aplicando a operação XOR, uma a uma,
+entre cada letra da mensagem M e cada letra da chave K, gerando assim cada letra da mensagem codificada
+C. Este processo pode ser representado matematicamente da seguinte forma.
+m1 m2 . . . mi−1 mi mi+1 mi+2 . . . mn−1 mn
+⊕ ⊕ . . .   ⊕ ⊕   ⊕   ⊕  . . .  ⊕  ⊕
+k1 k2 . . . kq−1 kq  k1   k2  . . . kj−1 kj
+c1 c2 . . . ci−1 ci ci+1 ci+2 . . . cn−1 cn
+
+Onde:
+n: Tamanho da mensagem M e da mensagem codificada C;
+
+1.2 Decodificação 3 MÉTODO DE CODIFICAÇÃO
+q: Tamanho da chave K;
+i: Valor arbitrário entre 1 e n. 1 < i < n;
+j: Valor arbitrário entre 1 e q. 1 < j < q.
+Ao final o processo terá calculado cada caracter da mensagem codificada C.
+
+ci = mi ⊕ kj
+
+Observem que, ao codificar cada caracter da mensagem, pode acontecer da chave chegar ao fim. Quando
+isso acontecer, o processo continua utilizando o primeiro caracter da chave novamente e partindo daí em
+diante sempre que necessário.
+
+
+1.2 Decodificação
+Quando estamos de posse da mensagem codificada C e da chave K e temos o interesse de gerar a mensagem
+M, este processo é chamado de decodificação. Este processo é feito aplicando a mesma operação XOR, uma
+a uma, entre cada letra da mensagem codificada C e cada letra da chave K, gerando assim cada letra da
+mensagem M. Este processo pode ser representado matematicamente da mesma forma que a codificação, só
+que aplicando-se à mensagem codificada C para se obter a mensagem M.
+
+c1 c2 . . . ci−1 ci ci+1 ci+2 . . . cn−1 cn
+⊕ ⊕ . . . ⊕ ⊕ ⊕ ⊕ . . . ⊕ ⊕
+k1 k2 . . . kq−1 kq k1 k2 . . . kj−1 kj
+m1 m2 . . . mi−1 mi mi+1 mi+2 . . . mn−1 mn
+
+Onde:
+n: Tamanho da mensagem M e da mensagem codificada C;
+q: Tamanho da chave K;
+i: Valor arbitrário entre 1 e n. 1 < i < n;
+j: Valor arbitrário entre 1 e q. 1 < j < q.
+Ao final o processo terá calculado cada caracter da mensagem M.
+mi = ci ⊕ kj
+
+1.3 Exemplo de codificação
+Supondo que o valor da mensagem M e da chave K sejam M = "Atividade EARTE" e K = "Segredo",
+a codificação seria a seguinte.
+
+’A’ ’t’ ’i’ ’v’ ’i’ ’d’ ’a’ ’d’ ’e’ ’ ’ ’E’ ’A’ ’R’ ’T’ ’E’
+⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕
+’S’ ’e’ ’g’ ’r’ ’e’ ’d’ ’o’ ’S’ ’e’ ’g’ ’r’ ’e’ ’d’ ’o’ ’S’
+18 17 14 4 12 0 14 55 0 71 55 36 54 59 22
+
+Com isso produzimos a mensagem codificada C, que neste exemplo tem o seguinte valor. M = {18, 17,
+14, 4, 12, 0, 14, 55, 0, 71, 55, 36, 54, 59, 22}.
+
+Exemplo de decodificação:
+
+18 17 14 4 12 0 14 55 0 71 55 36 54 59 22
+⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕ ⊕
+’S’ ’e’ ’g’ ’r’ ’e’ ’d’ ’o’ ’S’ ’e’ ’g’ ’r’ ’e’ ’d’ ’o’ ’S’
+’A’ ’t’ ’i’ ’v’ ’i’ ’d’ ’a’ ’d’ ’e’ ’ ’ ’E’ ’A’ ’R’ ’T’ ’E’
+
+1.4 Exemplo de decodificação
+Supondo que o valor da mensagem codificada C e da chave K sejam M = {18, 17, 14, 4, 12, 0, 14, 55,
+0, 71, 55, 36, 54, 59, 22} e K = "Segredo", a decodificação seria a seguinte.
+Com isso produzimos a mensagem M, que neste exemplo tem o seguinte valor. M = "Atividade
+EARTE".
+
+
+2 Programa:
+O programa deverá implementar tanto a codificação quanto a decodificação.
+Para permitir que o usuário acesse a opção que ele deseja, o programa deve primeiramente mostrar na
+tela um menu com 3 opções:
+1 Codificar;
+2 Decodificar;
+3 Sair.
+Após apresentado o menu, o programa deve pedir para o usuário digitar a opção escolhida (1, 2, ou 3).
+Caso o usuário tenha escolhido a opção 1 ou 2, o programa deverá então executar a função escolhida pelo
+usuário e mostrar o menu novamente ao final. Caso o usuário tenha escolhido a opção 3, o programa deverá
+terminar.
+
+
+2.1 Opções codificação e decodificação
+Nas operações de codificação e decodificação a mensagem M deve aceitar mensagem de até 60 caracteres, não
+necessitando ser capaz de manipular mensagens maiores. Da mesma forma, a mensagem codificada C deve
+aceitar mensagem de até 60 números inteiros, não necessitando ser capaz de manipular mensagens maiores.
+Ao iniciar a codificação, o programa deverá solicitar que o usuário digite a mensagem M sem espaços,
+para codificá-la. Após receber a mensagem e fazer os cálculos correspondentes, o programa deverá imprimir
+na tela o tamanho da mensagem digitada e a mensagem codificada C correspondente.
+Ao iniciar a decodificação, o programa deverá solicitar que o usuário primeiramente digite o tamanho
+da mensagem que será digitada, em seguida o programa deve solicitar que o usuário digite a mensagem
+codificada C, para decodificá-la. Após receber a mensagem e fazer os cálculos correspondentes, o programa
+deverá imprimir na tela mensagem M correspondente.
+A mensagem M deverá sempre ser tratada, tanto para leitura quanto para impressão, como uma sequência
+(vetor) de caracteres. Já a mensagem codificada C deverá sempre ser tratada, tanto para leitura quanto
+para impressão, como uma sequência (vetor) de números inteiros.
+A chave a ser utilizada em ambos os processos será K = "EARTE2020/1".
+4.2 Lembretes
+• A operação XOR, que matematicamente é simbolizada por ⊕, na linguagem C é executado utilizando
+o símbolo de acento circunflexo (^);
+• Para obter o tamanho da mensagem digitada pelo usuário, pode ser utilizada a função strlen da
+biblioteca string.h;
