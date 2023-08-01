@@ -1,0 +1,11 @@
+---- Matriz identidade -----
+
+Em matemática, matriz identidade é uma matriz quadrada (mesma quantidade de linhas e colunas), cujos
+elementos da diagonal principal são todos iguais a 1 e os demais são todos iguais a 0. Uma matriz identidade
+é denotada por In onde n é a ordem da matriz.
+
+O aluno deverá criar um programa em linguagem C que pede para o usuário digitar um inteiro positivo
+que represente a ordem de uma matriz identidade n. Após receber o valor, o programa deverá alocar
+dinamicamente a matriz com o tamanho adequado segundo a ordem n informada e preencher a matriz
+com os valores de uma matriz identidade In. Ao final o programa deverá imprimir na tela a matriz identidade
+In com os seus valores adequadamente preenchidos.

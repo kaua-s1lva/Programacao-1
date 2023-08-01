@@ -3,16 +3,17 @@
 
 int main (void) {
 
-    int i, a[3], b[3], moduloA, moduloB, soma;
+    int i;
+    float a[3], b[3], moduloA, moduloB, soma;
 
     printf("Digite as coordenas do vetor A: \n");
     for (i=0; i<3; i++) {
-        scanf("%d", &a[i]);
+        scanf("%f", &a[i]);
     }
 
     printf("Digite as coordenas do vetor B: \n");
     for (i=0; i<3; i++) {
-        scanf("%d", &b[i]);
+        scanf("%f", &b[i]);
     }
 
     for (i=0; i<3; i++) {
@@ -25,7 +26,7 @@ int main (void) {
     }
     moduloB = sqrt(soma);
 
-    printf("O valor do modulo do vetor A e: %d \nO valor do modulo de B e: %d", moduloA, moduloB);
+    printf("O valor do modulo do vetor A e: %.2f \nO valor do modulo de B e: %.2f", moduloA, moduloB);
     
 
     return 0;
