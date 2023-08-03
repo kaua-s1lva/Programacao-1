@@ -73,7 +73,7 @@ int main (void) {
 
     } while ( verificador != 0 );
 
-    printf("\nA hora e: %d : %d : %d\n", horario2.hora, horario2.minuto, horario2.segundo);
+    printf("\nA hora e: %d : %d : %d", horario2.hora, horario2.minuto, horario2.segundo);
 
     segundo1 = horario1.hora * 3600;
     segundo1 += horario1.minuto * 60;
@@ -83,19 +83,19 @@ int main (void) {
     segundo2 += horario2.minuto * 60;
     segundo2 += horario2.segundo;
 
-    if (segundo1 < segundo2) {
-        horario.hora = segundo1/3600;
-        horario.minuto = (segundo1 % 3600) / 60;
-        horario.segundo = (segundo1 % 3600) % 60;
-        printf("\nO horario anterior e: %d:%d:%d\n", horario.hora, horario.minuto, horario.segundo);
-    } else if(segundo2 < segundo1) {
-        horario.hora = segundo2/3600;
-        horario.minuto = (segundo2 % 3600) / 60;
-        horario.segundo = (segundo2 % 3600) % 60;
-        printf("\nO horario anterior e: %d:%d:%d\n", horario.hora, horario.minuto, horario.segundo);
+    if (segundo1 > segundo2) {
+        segundo3 = segundo1 - segundo2;
+    } else if (segundo2 > segundo1) {
+        segundo3 = segundo2 - segundo1;
     } else {
-        printf("\nOs horarios sao iguais!\n");
+        printf("Os tempos sao iguais");
     }
+
+    horario.hora = segundo3/3600;
+    horario.minuto = (segundo3 % 3600) / 60;
+    horario.segundo = (segundo3 % 3600) % 60;
+
+    printf("\n\nO intervalo de hora e: %d:%d:%d\n", horario.hora, horario.minuto, horario.segundo);
 
     return 0;
 }
