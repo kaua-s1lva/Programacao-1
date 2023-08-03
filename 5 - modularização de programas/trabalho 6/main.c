@@ -38,17 +38,12 @@ void imprimePaciente(tPessoa registro){
 
 float calculaIMC(tPessoa registro){
     //Calcular e retornar o IMC de um paciente
-    float imc;
-
-    imc = registro.altura;
-
-    return imc;
-
+    registro.imc = registro.peso / (registro.altura * registro.altura);
+    return registro.imc;
 }
 
 int main(void) {
     //Parte principal do programa
-    float indice;
     int i, n;
     tPessoa *pessoa;
 
@@ -57,11 +52,14 @@ int main(void) {
 
     pessoa = (tPessoa*) malloc (n * sizeof(tPessoa));
 
-    lePaciente(pessoa);
+    for (i=0; i<n; i++) {
+        lePaciente(&pessoa[i]);
+        pessoa[i].imc = calculaIMC(pessoa[i]);
+    }
 
-
-    
-
+    for (i=0; i<n; i++) {
+        imprimePaciente(pessoa[i]);
+    }
 
     return 0;
 }
